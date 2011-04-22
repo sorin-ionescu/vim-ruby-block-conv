@@ -78,7 +78,7 @@ function! s:RubyBlockDoEndToBrace(_firstline, _lastline)
     
     "echo orig
     "input(orig)
-    let repl = substitute(orig, '\v\s*do\s*(\|[^|]*\|)?', '{\1 ', '')
+    let repl = substitute(orig, '\v\s*do\s*(\|[^|]*\|)?', ' {\1 ', '')
     "execute 'normal d' . (a:_lastline - a:_firstline) . 'j'
     execute ':' . a:_firstline . ',' . a:_lastline . 'd'
     call append(a:_firstline - 1, repl)
